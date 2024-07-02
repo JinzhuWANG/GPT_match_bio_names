@@ -1,16 +1,17 @@
 import pandas as pd
 import numpy as np
 
-
-
-# Read the CSV file
-df_Fauna = pd.read_csv('data/EPBC Act List of Threatened Fauna.csv')
+from tools import clean_csv
 
 
 
 
+# Read data
+df_fauna = clean_csv('data/EPBC Act List of Threatened Fauna.csv')
+df_flora = clean_csv('data/EPBC Act List of Threatened Flora.csv')
+df = pd.concat([df_fauna, df_flora], axis=0).reset_index(drop=True)
+    
 
 
-
-
+df
 
