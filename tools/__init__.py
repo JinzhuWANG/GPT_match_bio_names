@@ -25,10 +25,10 @@ def clean_csv(path:str):
         sel_df = df.iloc[idx[1:]].copy()
         
         # Extract the species and endangered status, append to the dataframe
-        species = re.compile(r'(.*?) that are').findall(desc)[0]   # Characters before 'that are'
+        group = re.compile(r'(.*?) that are').findall(desc)[0]   # Characters before 'that are'
         status = re.compile(r'that are (.*?) ').findall(desc)[0]   # Characters between 'that are' and ' '
         sel_df['Endangered Status'] = status
-        sel_df['Species'] = species
+        sel_df['Group'] = group
         
         # Append to the final dataframe
         clearn_df = pd.concat([clearn_df, sel_df], axis=0)
