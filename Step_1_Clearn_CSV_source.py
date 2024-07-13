@@ -1,6 +1,5 @@
 import pandas as pd
 import numpy as np
-import openai
 import requests
 
 from tools import clean_csv
@@ -18,8 +17,6 @@ df = pd.concat([df_fauna, df_flora], axis=0).reset_index(drop=True)
 # Get the species names for LUTO 
 df_luto = pd.read_excel("N:/Data-Master/Biodiversity/Environmental-suitability/Species-list/species_list.xlsx")
 names_luto = df_luto['SPECIES_LUTO'].tolist()
-
-
 
 
 
