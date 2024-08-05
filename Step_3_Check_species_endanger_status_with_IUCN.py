@@ -39,7 +39,7 @@ def get_assessment_id(full_name):
         assess_id = data['assessments'][0]['assessment_id'] if len(data['assessments']) > 0 else None
         return assess_id
     else:
-        print(response.status_code)
+        print(f'Can not find record for {full_name} in the RedList. (Error code: {response.status_code})')
         return None
     
     
